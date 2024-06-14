@@ -1,0 +1,88 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>LogIn Page</title>
+<style>
+    .button {
+      background-color: #4CAF50;
+      border: none;
+      color: white;
+      padding: 10px 28px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+    }
+    </style>
+    <script type = "text/javascript" >
+function preventBack() { window.history.forward(); }
+setTimeout("preventBack()", 0);
+window.onunload = function () { null };
+</script>
+<script type="text/javascript">
+    function validate()
+    {
+        var passwd=document.LogIn.UserPassword.value;
+        if(passwd.length<6)
+        {
+            alert ("Password must be of 6 characters! And if you not remember password go to forgot link!!");
+            document.LogIn.UserPassword.focus();
+            return false;
+        }   
+     }
+     </script>
+</head>
+
+<body bgcolor="">
+<marquee> <h1 class="impact" style="color:white;"><b>Car Care Service Center</b></h1></marquee>
+<center><h2 class="impact" style="color:white;">LogIn</h2></center>
+ <form method="post" name="LogIn" action="LogInF.php" onsubmit="return validate();">
+ <style>
+      body {
+        background-image: url('bg1.jpg');
+        background-repeat: no-repeat;
+        background-attachment: fixed; 
+        background-size: 100% 100%;
+      }
+      </style>
+<table align="center"  cellpadding="10" cellspacing="2" bgcolor="white" style="border:2px solid black" bordercolor="#D7DF01">
+<tr>
+  
+                <tr align="center">
+                <td><b>User Type</b></td>
+                <td>
+                  <select name="UserType">
+                   <option>admin</option>
+                   <option>user</option>
+                   
+                  </select>
+                </td>
+             </tr>
+             <tr align="center">
+               <td><b>User Name</b></td>
+               <td><input type="text" name="UserName"/></td>
+             </tr>
+             <tr align="center">
+               <td><b>User Password</b></td>
+               <td><input type="password" name="UserPassword"/></td>
+             </tr>
+             <tr>
+                <td  colspan="2"><center>
+                <input class="button" type="submit" value="SUBMIT" name="LOGIN" onclick="preventBack()"/>
+               <a class="button" type="submit" onclick="preventBack()" href="index.htm">HOME</a></td>
+             </tr>
+             <tr>
+                <td colspan="3"><p><center>New Here? <a href="registration.htm"> Sign Up</a></center></p>
+                                <p><center>Forgot Your Password? <a href="Forgotpassword.htm"> Reset </a></center></p>
+                                <p><center>Change Password? <a href="ChangePassword.htm"> Change Password</a></center></p>
+                </td>
+                
+             </tr>
+              
+         </table>
+      </form>
+
+</body>
+</html>

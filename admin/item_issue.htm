@@ -1,0 +1,138 @@
+<?php
+ $db=mysqli_connect("localhost","root","");
+ mysqli_select_db($db,"carservice");
+ if(!$db)
+ {
+    echo "Coonection Failed...!!!";
+ }
+?>
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Item Issue</title>
+         <style>
+.button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 10px 28px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+</style>
+<script type = "text/javascript" >
+function preventBack() { window.history.forward(); }
+setTimeout("preventBack()", 0);
+window.onunload = function () { null };
+</script>  
+</head>
+<body>
+ <center>
+  <marquee><h1 class="impact" style="color:white;"><b>Car Care Service Center</b></h1></marquee>
+  <h2 class="impact" style="color:white;">Item Issue</h2>
+  <form name="item_issue" action="item_issue.php" method="POST">
+    <style>
+  body {
+    background-image: url('bg1.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+    background-size: 100% 100%;
+  }
+  </style>
+ <table border="1" align="center"><table align="center" cellpadding="10" bgcolor="white" style="border:1px solid black" bordercolor="#D7DF01">
+    <!--<tr>
+     <td>
+      <b>Issue Sr.No </b>
+     </td>
+     <td> 
+      <input type="text" name="I_No" required="">
+     </td>
+    </tr> -->
+    <tr>
+     <td>
+      <b>Issued Item Date</b>
+     </td>
+     <td align="center">
+      <input type="date" name="IssueDate" required="" >
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <b>Item Code  </b>
+     </td>
+     <td align="center">
+      <select name="I_Code" required="">
+       <option>Select</option>
+       <option>I101</option>
+       <option>I102</option>
+       <option>I103</option>
+       <option>I104</option>
+       <option>I105</option>
+       <option>I106</option>
+       <option>I107</option>
+       <option>I108</option>
+       <option>I109</option>
+       <option>I110</option>
+       <option>I111</option>
+       <option>I112</option>
+       <option>I113</option>
+       <option>I114</option>
+      </select>
+     </td>
+    </tr>
+     <tr>
+     <td>
+      <b>Jobcard No </b>
+     </td>
+     <td> 
+      <input type="text" name="jobcardno" required="">
+     </td>
+    </tr>
+   <!-- <tr>
+     <td>
+      <b>Issued Item Unit of Measurement</b>
+     </td>
+     <td align="center">
+      <select name="Issue_Unit_Measure">
+      <option>Select</option>
+      <option>kg</option>
+      <option>meter</option>
+      <option>no.s</option>
+      <option>liter</option>
+      <option>feet</option>
+      <option>set</option>
+           
+     </td>
+    </tr>-->
+    <tr>
+     <td>
+      <b>Issued Item Quantity</b>
+     </td>
+     <td>
+      <input type="text" name="Issue_Qty" required="">
+     </td>
+    </tr>
+    
+    <tr>
+      <td><b>Billing Type </b></td>
+      <td><input type="radio" name="billtype" value="Cash" checked="">Cash
+     <input type="radio" name="billtype" value="Online">Online </td>
+     </tr> 
+     
+    <tr align="center">
+     <td colspan="2">
+      <input  class="button" type="submit" name="submit" value="SUBMIT" onclick="preventBack()"/>
+      <input class="button" type="submit" value="HOME" name="HOME" onclick="location.href='index2.html'"/>
+     </td>
+    </tr>
+   </table>
+  </form>
+  
+ </center>
+
+</body>
+</html>

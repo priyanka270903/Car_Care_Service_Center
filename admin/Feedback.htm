@@ -1,0 +1,79 @@
+<!DOCTYPE html>    
+<html>    
+<head> 
+ <title>Feedback Form</title>
+  <style>
+.button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 10px 28px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+</style> 
+ <script type = "text/javascript" >
+function preventBack() { window.history.forward(); }
+setTimeout("preventBack()", 0);
+window.onunload = function () { null };
+</script>  
+ <script>
+    function validate()
+    {
+        var usnm=/^[a-zA-Z\-]+$/;
+        var unm=document.Feedback.Custmer_Name.value.match(usnm);
+        if(unm==null)
+        {
+            alert("Please enter letters in Customer Name!");
+            document.Feedback.Custmer_Name.focus();
+            return false;
+        }
+        return true;
+            
+     }
+        
+    </script>
+
+
+</head>  
+<body>
+<center>
+  <marquee><h1 class="impact" style="color:white;"><b>Car Care Service Center</b></h1></marquee>
+  <h2 class="impact" style="color:white;">Feedback Form</h2>
+  <form name="Feedback" action="Feedback.php" method="POST" onsubmit="return validate();">
+   <style>
+  body {
+    background-image: url('bg1.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+    background-size: 100% 100%;
+  }
+  </style>
+ <table align="center" cellpadding="10" bgcolor="white" style="border:1px solid black" bordercolor="#D7DF01">
+      <tr>
+       <td><b>Customer Name</b></td>
+       <td><input type="text" name="Custmer_Name" placeholder="Your Name Here.." required=""></td>
+     </tr>         
+     <tr>
+      <td><b>Mail ID</b></td>
+      <td><input type="email" name="Customer_Email" placeholder="Your Email Here.." required=""></td>
+     </tr>
+     <tr>
+      <td><b>Feedback</b></td>
+      <td><textarea type="text" name="Feedback" placeholder="Feedback :) " required=""></textarea></td>
+     </tr>
+     <tr align="center">
+      <td colspan="2">
+      <input class="button" type="submit" name="submit" value="SUBMIT" onclick="preventBack()"/>
+      <input class="button" type="submit" value="HOME" name="HOME" onclick="location.href='index2.html'"/>
+      </td>
+      </tr>
+     </table>
+    </form>
+   </center>
+  </body>
+</html>

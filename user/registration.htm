@@ -1,0 +1,146 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Registration</title>
+    <style>
+.button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 10px 28px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+</style>
+
+ <script>
+    function checkPassword(form)
+    {
+        var passwd=document.registration.password.value;
+        var cpasswd=document.registration.cpassword.value;
+        var usnm=/^[a-zA-Z\-]+$/;
+        var unm=document.registration.uname.value.match(usnm);
+        if(passwd.length<6)
+        {
+            alert ("Password must be of 6 characters!");
+            document.registration.password.focus();
+            return false;
+        }   
+        if (passwd != cpasswd) 
+        {
+        alert("Your first Password is not similar with second password. Please enter same password in both");
+        document.registration.cpassword.focus();
+        return false;
+        }
+        if(unm==null)
+        {
+            alert("Please enter letters in Username!");
+            document.registration.uname.focus();
+            return false;
+        }
+        return true;
+    }
+    </script>
+    <script type = "text/javascript" >
+function preventBack() { window.history.forward(); }
+setTimeout("preventBack()", 0);
+window.onunload = function () { null };
+</script>  
+</head>
+
+<body bgcolor="">
+<center>
+<form  name="registration" method="POST" action="registration.php" onsubmit="return checkPassword(this)">
+
+<style>
+      body {
+        background-image: url('bg1.jpg');
+        background-repeat: no-repeat;
+        background-attachment: fixed; 
+        background-size: 100% 100%;
+      }
+      </style>
+      
+<marquee> <h1 class="impact" style="color:white;"><b>Car Care Service Center</b></h1></marquee>
+      
+<h2 class="impact" style="color:white;">Registration</h2>
+ <table align="center"  cellpadding="10" bgcolor="white" style="border:2px solid black" bordercolor="#D7DF01">
+ 
+ <tr>
+<td><b>User Name</b></td>
+<td>
+<input type="text" name="uname" placeholder="Enter Your Username Here" size="42" required="">
+</td>
+</tr>
+<tr>
+<td><b>User Type </b></td>
+<td>
+<select name="utype">
+<option>Select</option>
+<option value="admin">admin</option>
+<option value="user">user</option>
+</select>
+</td> 
+</tr>
+
+<tr>
+<td><b>Mail ID</b></td>
+<td>
+<input type="email" name="email" placeholder="Enter Your EmailId Here" size="42" required="">
+</td>
+</tr>
+<tr>
+<td><b>Password</b></td>
+<td>
+<input type="password" name="password" id="pass" placeholder="Enter Your Password Here" size="42" required="">
+</td>
+</tr>
+<tr>
+<td><b>Confirm Password</b></td>
+<td>
+<input type="password" name="cpassword" placeholder="Enter Your Confirmpassword Here" size="42"  required="">
+</td>
+</tr>
+
+<tr>
+<td><b>Security Question</b></td>
+<td>
+<select name="SecQ">
+<option>Select</option>
+<option>What is your primary school name?</option>
+<option>What is your hobbie?</option>
+<option>What is your last four digit phone number?</option>
+<option>Who is your favourite leader?</option>
+<option>What is your favourite festival?</option>
+<option>Which is your favourite Place to visit?</option>
+</select>
+</td>
+</tr>
+<tr>
+<td><b>Security Answer</b></td>
+<td>
+<input type="text" name="ans" placeholder="Enter Your Answer Here" size="42">
+</td>
+</tr>
+<tr>
+<td><b>Birth date</b></td>
+<td>
+<input type="date" name="birthdate">
+</td>
+</tr>
+<tr>
+<td colspan="2"><center><input class="button" type="submit" name="Submit" value="SUBMIT" onclick="preventBack()"/>
+<input class="button" type="submit" value="HOME" name="HOME" onclick="location.href='index1.htm'"/>
+</center></td>
+</tr>
+
+
+</form>
+</table>
+</center>
+</body>
+</html>

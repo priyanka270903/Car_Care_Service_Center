@@ -1,0 +1,70 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<style>
+    .button {
+      background-color: #4CAF50;
+      border: none;
+      color: white;
+      padding: 10px 28px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+    }
+    </style>
+    
+	<title>Invoice</title>
+
+</head>
+
+<body bgcolor="">
+<center>
+<marquee> <h1 class="impact" style="color:white;"><b>Car Care Service Center</b></h1></marquee>
+<h2 class="impact" style="color:white;"><b>Invoice</b></h2>
+
+ 
+  <form action="invoice.php" method="post" name="invoice">
+   <style>
+      body {
+        background-image: url('bg1.jpg');
+        background-repeat: no-repeat;
+        background-attachment: fixed; 
+        background-size: 100% 100%;
+      }
+      </style>
+      
+    <table align="center"  cellpadding="10" bgcolor="white" style="border:1px solid black" bordercolor="#D7DF01">
+    
+      
+     <!-- <tr align="center">
+        <td><b>Invoice No.</b> </td>
+        <td> <input type="text" name="invoice_no" required=""/></td>
+      </tr> -->
+      <tr align="center">
+        <td><b>Invoice Date</b> </td>
+        <td> <input type="date" name="invoice_date" required=""/></td>
+      </tr>
+   <tr align="center">
+        <td><b>Jobcard No</b> </td>
+        <td> <input type="text" name="job_cardno" required=""/></td>
+      </tr>
+     
+      
+      <tr align="center">
+        <td><b>Discount</b> </td>
+        <td> <input type="text" name="discount" required=""/></td>
+      </tr>             
+      <tr align="center">
+        <td colspan="2"> 
+        <input class="button" type="submit" value="SUBMIT" name="save"/>
+        <input class="button" type="submit" value="HOME" name="HOME" onclick="location.href='index1.htm'"/>
+        </td>
+      </tr>
+    </table>
+  </form>
+</center>
+</body>
+</html>
